@@ -12,7 +12,7 @@ import umontreal.ssj.mcqmctools.RQMCExperiment;
 import umontreal.ssj.rng.LFSR113;
 import umontreal.ssj.rng.RandomStream;
 
-// This is question 3 of homework 2 of ift6561, A-2018.
+// RQMC for \prod_{j=1}^s exp(a U_j) cos (b U_j).
 
 public class ProductExpCosRQMC implements MonteCarloModelDouble {
 
@@ -59,7 +59,7 @@ public class ProductExpCosRQMC implements MonteCarloModelDouble {
 			    (new ProductExpCosRQMC(s, 2.0, 0.5), stream, p, rand, n, m));
 		System.out.println (RQMCExperiment.makeComparisonExperimentMCvsRQMC
 				(new ProductExpCosRQMC(s, 2.0, 50.0), stream, p, rand, n, m));
-		System.out.println (RQMCExperiment.makeComparisonExperimentMCvsRQMC
-				(new ProductExpCosRQMC(s, 10.0, 0.5), stream, p, rand, n, m));
+		//System.out.println (RQMCExperiment.makeComparisonExperimentMCvsRQMC
+		//		(new ProductExpCosRQMC(s, 10.0, 0.5), stream, p, rand, n, m));
 	}
 }

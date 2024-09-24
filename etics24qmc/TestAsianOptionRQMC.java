@@ -9,16 +9,11 @@ import umontreal.ssj.stochprocess.BrownianMotion;
 import umontreal.ssj.stochprocess.GeometricBrownianMotion;
 import umontreal.ssj.util.Chrono;
 
-// Program for QMC and RQMC examples in the introduction of my book, in 2 and 12 dimensions.
+// Program for QMC and RQMC example with an asian option.
 public class TestAsianOptionRQMC {
 
    double secondsMC;
    double varianceMC;
-
-   public TestAsianOptionRQMC(AsianOption asian) {
-      // this.asian = asian;
-   }
-
 
    // Make an RQMC experiment and compare with MC, for each point set.
    // Sobol point set will have 2^k points.
@@ -78,7 +73,7 @@ public class TestAsianOptionRQMC {
       NormalGen gen = new NormalGen(noise);
       AsianOption asian = new AsianOption(r, numObsTimes, T1, T, strike);
       asian.setProcess(new GeometricBrownianMotion(s0, r, sigma, new BrownianMotion(0, 0, 1, gen)));
-      TestAsianOptionRQMC test = new TestAsianOptionRQMC(asian);
+      TestAsianOptionRQMC test = new TestAsianOptionRQMC();
       System.out.println("\n******************************************");
       System.out.println("Asian option with sequential sampling \n");
 

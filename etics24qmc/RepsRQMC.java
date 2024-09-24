@@ -9,7 +9,7 @@ import umontreal.ssj.mcqmctools.RQMCExperiment;
 //import umontreal.ssj.stat.Tally;
 import umontreal.ssj.util.Chrono;
 
-// Generate and store RQMC replicates for various models, s, and k.
+// Performs RQMC replicates for various models, s, and k.
 
 public class RepsRQMC extends RQMCExperiment {
 
@@ -19,7 +19,7 @@ public class RepsRQMC extends RQMCExperiment {
       MonteCarloModelDouble model;
       Chrono timerTotal = new Chrono();
 
-      for (int s = 4; s <= 32; s *= 2) {
+      for (int s = 4; s <= 16; s *= 2) {
          for (int k = 10; k <= 14; k = k + 2) {
             // Uncomment the model you want below. ***
             // model = new SumUeU(s);
@@ -29,7 +29,7 @@ public class RepsRQMC extends RQMCExperiment {
             // model = new SmoothGauss(s);
             // model = new SumUniforms(s);
             // model = new MC2(s);
-            model = new RidgeJohnsonSU(s);
+            // model = new RidgeJohnsonSU(s);
             model = new ProductExpCosRQMC(s, 1.0, 1.0);
             
             RQMCSamplesEtics24.simulRepsManyTypes(model, s, k, m);
