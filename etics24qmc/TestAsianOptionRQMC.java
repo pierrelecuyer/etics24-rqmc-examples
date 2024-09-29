@@ -62,7 +62,7 @@ public class TestAsianOptionRQMC {
 
    // Main program: QMC and RQMC experiment with Asian option.
    public static void main(String[] args) {
-      int numObsTimes = 4;
+      int numObsTimes = 4;     // Dimension
       double T1 = 1.0 / numObsTimes;
       double T = 1.0;
       double strike = 100.0;
